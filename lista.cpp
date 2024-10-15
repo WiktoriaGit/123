@@ -249,7 +249,7 @@ public:
     }
 };
 
-void dump(){}
+
 
 /**
  * @brief Funkcja główna programu demonstrująca działanie listy dwukierunkowej.
