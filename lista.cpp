@@ -254,7 +254,9 @@ int main()
     list.deleteAtEnd();
     list.showList();
 
-    
+    cout << "Czyscimy cala liste: " << endl;
+    list.clearList();
+    list.showList();
 
     return 0;
 }
