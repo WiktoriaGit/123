@@ -1,23 +1,15 @@
 #include <iostream>
 using namespace std;
 
-/**
- * @brief Klasa reprezentująca listę dwukierunkową.
- */
+
 class DoublyLinkedList {
-    /**
-     * @brief Klasa reprezentująca pojedynczy węzeł w liście.
-     */
+
     class Node {
     public:
         int value;         ///< Wartość przechowywana w węźle.
         Node* nextNode;    ///< Wskaźnik na następny węzeł.
         Node* prevNode;    ///< Wskaźnik na poprzedni węzeł.
 
-        /**
-         * @brief Konstruktor węzła.
-         * @param value Wartość do przechowania w węźle.
-         */
         Node(int value)
         {
             this->value = value;
@@ -26,18 +18,10 @@ class DoublyLinkedList {
         }
     };
 private:
-    Node* head; ///< Wskaźnik na pierwszy węzeł listy.
+    Node* head; 
 
-public:
-    /**
-     * @brief Konstruktor listy dwukierunkowej.
-     */
+public: 
     DoublyLinkedList() : head(nullptr) {}
-
-    /**
-     * @brief Dodaje element na początek listy.
-     * @param value Wartość do dodania.
-     */
     void insertAtStart(int value)
     {
         Node* newNode = new Node(value);
@@ -52,10 +36,6 @@ public:
         head = newNode;
     }
 
-    /**
-     * @brief Dodaje element na koniec listy.
-     * @param value Wartość do dodania.
-     */
     void insertAtEnd(int value)
     {
         Node* newNode = new Node(value);
@@ -73,12 +53,6 @@ public:
         temp->nextNode = newNode;
         newNode->prevNode = temp;
     }
-
-    /**
-     * @brief Dodaje element pod wskazany indeks.
-     * @param value Wartość do dodania.
-     * @param pos Indeks, pod którym ma zostać dodany element.
-     */
     void insertIndex(int value, int pos)
     {
         if (pos == 0) {
@@ -106,10 +80,6 @@ public:
         }
         temp->nextNode = newNode;
     }
-
-    /**
-     * @brief Usuwa element z początku listy.
-     */
     void deleteAtStart()
     {
         if (head == nullptr) {
@@ -124,10 +94,6 @@ public:
         }
         delete temp;
     }
-
-    /**
-     * @brief Usuwa element z końca listy.
-     */
     void deleteAtEnd()
     {
         if (head == nullptr) {
@@ -149,11 +115,6 @@ public:
         temp->prevNode->nextNode = nullptr;
         delete temp;
     }
-
-    /**
-     * @brief Usuwa element z pod wskazanego indeksu.
-     * @param pos Indeks elementu do usunięcia.
-     */
     void deleteIndex(int pos)
     {
         if (head == nullptr) {
@@ -184,10 +145,6 @@ public:
         }
         delete temp;
     }
-
-    /**
-     * @brief Wyświetla całą listę.
-     */
     void showList()
     {
         Node* temp = head;
@@ -202,10 +159,6 @@ public:
         }
         cout << endl;
     }
-
-    /**
-     * @brief Wyświetla listę w odwrotnej kolejności.
-     */
     void showReverseList()
     {
         Node* temp = head;
@@ -226,10 +179,6 @@ public:
         }
         cout << endl;
     }
-
-    /**
-     * @brief Czyści całą listę.
-     */
     void clearList()
     {
         Node* current = head;
@@ -241,20 +190,11 @@ public:
         head = nullptr;
     }
 
-    /**
-     * @brief Destruktor listy dwukierunkowej.
-     */
     ~DoublyLinkedList() {
         clearList();
     }
 };
 
-
-
-/**
- * @brief Funkcja główna programu demonstrująca działanie listy dwukierunkowej.
- * @return Kod zakończenia programu.
- */
 int main()
 {
     DoublyLinkedList list;
